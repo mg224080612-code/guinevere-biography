@@ -217,3 +217,53 @@ body, html {
 }
 
 /* [기존 .insights-container 및 .insight-card 스타일 유지] */
+/* 부드러운 스크롤 효과 추가 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 💡 [추가] 사이드 목차 디자인 */
+.side-nav {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    border-right: 2px solid var(--gold);
+    padding-right: 20px;
+}
+
+.side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.side-nav li {
+    margin: 15px 0;
+}
+
+.side-nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s, padding-right 0.3s;
+    display: block;
+}
+
+.side-nav a:hover {
+    color: var(--gold);
+    padding-right: 10px;
+}
+
+/* 화면이 작아지면 사이드바가 내용을 가릴 수 있으므로 숨김 처리 (모바일 대응) */
+@media (max-width: 1200px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+/* 기존 스타일들 (생략 - 이전과 동일하게 유지) */
