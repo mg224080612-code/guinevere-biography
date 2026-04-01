@@ -78,33 +78,74 @@ body, html {
 .image-content img:hover { transform: scale(1.03); box-shadow: 0 0 25px rgba(184, 134, 11, 0.6); }
 .image-caption { font-size: 0.9rem; color: #888; font-style: italic; text-align: center; margin-top: 10px; border-top: 1px solid rgba(184, 134, 11, 0.2); padding-top: 5px; width: 100%; }
 
-/* 💡 [추가됨] 새로운 텍스트 전용 섹션 스타일 */
-.text-box-section {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--gold);
-    border-radius: 15px;
-    padding: 40px;
-    margin-bottom: 80px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+/* =========================================
+   💡 [추가됨] 2x2 카드 그리드 레이아웃 (Insights)
+   ========================================= */
+.insights-container {
+    margin-bottom: 100px;
 }
-.text-box-section h2 {
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2칸으로 쪼개기 */
+    gap: 30px; /* 카드 사이 간격 */
+}
+
+.insight-card {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+    border-radius: 15px;
+    padding: 35px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 카드 상단에 숨겨진 그라데이션 금빛 선 (마우스 올릴 때 등장) */
+.insight-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(to right, #ffebd6, #b8860b);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* 마우스를 올렸을 때의 둥실 떠오르는 효과 */
+.insight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(184, 134, 11, 0.15);
+    border-color: rgba(184, 134, 11, 0.6);
+}
+.insight-card:hover::before {
+    opacity: 1;
+}
+
+.insight-card h3 {
     font-family: 'Cinzel', serif;
     color: var(--gold);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
     margin-top: 0;
-    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
-    display: inline-block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.2);
     padding-bottom: 10px;
+    display: inline-block;
 }
-.text-box-section p {
-    font-size: 1.15rem;
-    line-height: 1.8;
+
+.insight-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--text-light);
-    max-width: 800px;
-    margin: 0 auto;
     text-align: justify;
+    margin: 0;
+}
+
+/* 모바일 화면에서는 다시 1줄로 세로 배치 */
+@media (max-width: 768px) {
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .diagram-section { margin-bottom: 80px; padding: 40px; background: rgba(255, 255, 255, 0.6); border-radius: 15px; border: 1px solid var(--gold); }
