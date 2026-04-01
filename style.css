@@ -6,7 +6,6 @@
     --dark-red: #8b0000;
 }
 
-/* Base Styles */
 body, html {
     margin: 0; padding: 0;
     background-color: var(--bg-color);
@@ -22,13 +21,11 @@ body, html {
     color: #1a120b;
 }
 
-/* Background Lines */
 .gold-lines-bg {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     z-index: 0; pointer-events: none; opacity: 0.15;
 }
 
-/* Scroll Progress Bars */
 .scroll-progress {
     position: fixed; top: 0; width: 4px; height: 0%;
     background: linear-gradient(to bottom, #ffebd6, #e6b981, #b8860b);
@@ -37,7 +34,6 @@ body, html {
 #scroll-progress-left { left: 0; }
 #scroll-progress-right { right: 0; }
 
-/* Custom Cursor */
 #custom-cursor {
     position: fixed; top: 0; left: 0; width: 20px; height: 20px;
     border: 2px solid var(--gold); border-radius: 50%;
@@ -46,7 +42,6 @@ body, html {
 }
 #custom-cursor.hovered { width: 50px; height: 50px; background: rgba(184, 134, 11, 0.1); border-color: rgba(255, 223, 115, 0.9); }
 
-/* Hero & Parallax */
 .hero {
     height: 60vh; display: flex; align-items: center; justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/guinevere.png');
@@ -56,42 +51,20 @@ body, html {
 .hero h1 { font-family: 'Cinzel', serif; font-size: 4.5rem; color: #ffd700; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
 .hero p { font-size: 1.5rem; font-style: italic; margin-top: 10px; }
 
-/* Container & Chapters */
+/* 💡 레이아웃 찌그러짐 완벽 해결 */
 .container { 
-    display: block; /* 가로 정렬 방지! 세로로 차곡차곡 쌓이게 고정 */
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding: 60px 20px; 
-    position: relative; 
-    z-index: 10; 
+    display: block; 
+    max-width: 1000px; margin: 0 auto; padding: 60px 20px; position: relative; z-index: 10; 
 }
 
 .chapter { 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; /* 양쪽으로 예쁘게 찢어놓기 */
-    gap: 50px; 
-    margin-bottom: 100px; 
-    width: 100%;
+    display: flex; align-items: center; justify-content: space-between; gap: 50px; margin-bottom: 100px; width: 100%;
 }
+.chapter.reverse { flex-direction: row-reverse; }
 
-.chapter.reverse { 
-    flex-direction: row-reverse; 
-}
+.text-content { flex: 1; }
+.image-content { flex: 1; display: flex; flex-direction: column; align-items: center; }
 
-/* 텍스트와 이미지가 정확히 반반(1:1)의 공간을 차지하도록 강제 고정 */
-.text-content { 
-    flex: 1; 
-}
-
-.image-content { 
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 사진과 캡션을 가운데 정렬 */
-}
-
-/* Text Content & Drop Cap */
 .text-content h2 { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--gold); border-bottom: 1px solid #d4c4a8; padding-bottom: 10px; margin-top: 0; }
 .text-content p { font-size: 1.15rem; line-height: 1.8; color: var(--text-light); text-align: justify; }
 .text-content p:first-of-type::first-letter {
@@ -99,20 +72,13 @@ body, html {
     float: left; margin-right: 8px; line-height: 1; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Image Hover & Captions */
 .image-content img {
-    width: 100%; 
-    max-width: 400px; /* 사진이 너무 무식하게 커지지 않도록 안전장치 */
-    border-radius: 10px; 
-    border: 3px solid #e0d0b8;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    transition: transform 0.6s, box-shadow 0.6s; 
-    cursor: pointer; /* 클릭할 수 있다는 표시 (라이트박스용) */
+    width: 100%; max-width: 400px; border-radius: 10px; border: 3px solid #e0d0b8;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); transition: transform 0.6s, box-shadow 0.6s; cursor: pointer;
 }
-
 .image-content img:hover { transform: scale(1.03); box-shadow: 0 0 25px rgba(184, 134, 11, 0.6); }
 .image-caption { font-size: 0.9rem; color: #888; font-style: italic; text-align: center; margin-top: 10px; border-top: 1px solid rgba(184, 134, 11, 0.2); padding-top: 5px; width: 100%; }
-/* Quotes Section */
+
 .quote-section {
     max-width: 800px; margin: 80px auto; text-align: center; padding: 40px;
     background: rgba(212, 196, 168, 0.3); border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
@@ -120,23 +86,14 @@ body, html {
 }
 .malory-quote { font-size: 1.4rem; font-style: italic; line-height: 1.8; color: var(--text-main); margin: 0; }
 
-/* Diagrams & References */
 .diagram-section { margin-top: 80px; padding: 40px; background: rgba(255, 255, 255, 0.6); border-radius: 15px; border: 1px solid var(--gold); }
 .diagram-box h2 { font-family: 'Cinzel', serif; text-align: center; color: var(--gold); margin-bottom: 40px; font-size: 2.2rem; }
 .mermaid-wrapper { background: white; padding: 20px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .mermaid-wrapper h3 { font-family: 'Cinzel', serif; color: var(--gold); text-align: center; margin-bottom: 20px; }
-.diagram-caption { font-size: 0.85rem; text-align: center; color: #888; margin-top: 15px; }
 
-.reference-section { margin-top: 80px; padding: 40px 20px; border-top: 2px double var(--gold); }
-.reference-section h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 20px; }
-.ref-list { list-style: none; padding: 0; }
-.ref-list li { font-size: 1rem; margin-bottom: 15px; color: var(--text-light); line-height: 1.6; }
-
-/* Fade-in Animation */
 .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .fade-in-section.is-visible { opacity: 1; transform: none; }
 
-/* Gold Dust */
 .gold-dust {
     position: fixed; bottom: -10px; width: 3px; height: 3px;
     background: #FFDF73; border-radius: 50%; opacity: 0;
@@ -149,42 +106,16 @@ body, html {
     80% { opacity: 0.6; }
     100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
 }
-/* =========================================
-   💡 사진 확대 (Lightbox) 스타일
-   ========================================= */
-.image-content img {
-    cursor: pointer; /* 사진에 마우스를 올리면 클릭할 수 있다는 표시 추가 */
-}
 
+/* 💡 사진 확대 (Lightbox) 스타일 */
 #lightbox-modal {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9); /* 어두운 배경 */
-    z-index: 99999; /* 화면 맨 앞으로 가져오기 */
+    background-color: rgba(0, 0, 0, 0.9); z-index: 99999;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
 }
-
-/* 라이트박스가 켜졌을 때 */
-#lightbox-modal.show {
-    opacity: 1; pointer-events: auto;
-}
-
-.lightbox-content {
-    max-width: 90%; max-height: 80vh;
-    border: 3px solid var(--gold); border-radius: 10px;
-    box-shadow: 0 0 30px rgba(184, 134, 11, 0.5);
-}
-
-#lightbox-caption {
-    margin-top: 20px; color: #d4c4a8; font-family: 'Lora', serif;
-    font-size: 1.2rem; font-style: italic; text-align: center;
-}
-
-.lightbox-close {
-    position: absolute; top: 30px; right: 40px; font-size: 50px;
-    color: #fff; cursor: pointer; transition: color 0.3s;
-}
-
-.lightbox-close:hover {
-    color: var(--gold);
-}
+#lightbox-modal.show { opacity: 1; pointer-events: auto; }
+.lightbox-content { max-width: 90%; max-height: 80vh; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 0 30px rgba(184, 134, 11, 0.5); }
+#lightbox-caption { margin-top: 20px; color: #d4c4a8; font-family: 'Lora', serif; font-size: 1.2rem; font-style: italic; text-align: center; }
+.lightbox-close { position: absolute; top: 30px; right: 40px; font-size: 50px; color: #fff; cursor: pointer; transition: color 0.3s; }
+.lightbox-close:hover { color: var(--gold); }
