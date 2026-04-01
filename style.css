@@ -180,3 +180,40 @@ body, html {
 #lightbox-caption { margin-top: 20px; color: #d4c4a8; font-family: 'Lora', serif; font-size: 1.2rem; font-style: italic; text-align: center; }
 .lightbox-close { position: absolute; top: 30px; right: 40px; font-size: 50px; color: #fff; cursor: pointer; transition: color 0.3s; }
 .lightbox-close:hover { color: var(--gold); }
+/* [기존 스타일은 유지하고 아래 내용을 적절한 위치에 추가/수정] */
+
+/* 💡 Critical Question 전용 스타일: 눈에 띄게 강조 */
+.critical-box {
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(255, 255, 255, 0.7));
+    border-left: 5px solid var(--gold);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.critical-box h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--dark-red); /* 질문의 무게감을 위해 짙은 붉은색 사용 */
+    margin-top: 0;
+    font-size: 2rem;
+}
+.critical-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+    font-style: italic; /* 질문의 느낌을 살리기 위해 이탤릭체 */
+}
+
+/* 💡 Timeline 설명글 스타일 */
+.timeline-desc {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+/* [기존 .insights-container 및 .insight-card 스타일 유지] */
