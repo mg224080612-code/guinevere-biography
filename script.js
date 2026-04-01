@@ -39,7 +39,6 @@ function createDust() {
 }
 setInterval(createDust, 800);
 
-// 💡 사진 확대 (Lightbox) 기능
 const lightbox = document.getElementById('lightbox-modal');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
